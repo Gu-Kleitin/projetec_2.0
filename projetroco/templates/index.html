@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca Solidária</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+  <div id="janela" style="display: none; position: absolute;">
+      <iframe id="iframejanela" name="iframejanela" frameborder="3" style="height: 200px;"></iframe>
+    </div>
+  {% extends 'header.html' %}
+  {% block content %}
+  <div id="rodape">
+    <p> &nbsp by Group Six &nbsp</p>
+  </div> 
+  <div class="pagina">
+
+    <h3>Livros Em Alta</h3> <!-- Botão de seta -->
+    <div class="emalta">
+      <button class="botao_nav">
+        <i class="bi bi-arrow-left"></i>
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+      </button>
+      {% for livro in livros.emalta %}
+      <div class="livros">
+        
+        <img class="livros-img" src="{{ livro.img }}" style='cursor:pointer' id='abrirmodal' class='btn'  >
+        <div class="sobre">
+          <p class="title">{{livro.titulo}}</p>
+          <img src="{{livro.img2}}" width="70%">
+          <p class="font-">{{livro.sinopse}}<br>            
+        </div>
+        
+          </p>
+        
+      </div>
+      {% endfor %}
+      <button class="botao_nav">
+        <i class="bi bi-arrow-right"></i>
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>
+        
+      </button>
+    </div>
+
+    <h3>Livros Recentes</h3>
+    <div class="recentes ">
+      <button class="botao_nav">
+        <i class="bi bi-arrow-left"></i>
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+      </button>
+      {% for livro in livros.recentes %}
+      <div class="livros">
+        <img class="livros-img" src="{{ livro.img }} ">
+        <div class="sobre">
+          <p class="title">{{ livro.titulo }}</p>
+          <img src="{{ livro.img2 }}" width="70%">
+          <p class="font-">{{ livro.sinopse }}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <button class="botao_nav">
+        <i class="bi bi-arrow-right"></i>
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>
+      </button>
+    </div>
+
+
+
+    <h3>Livros Famosos</h3>
+    <div class="famosos">
+      <button class="botao_nav">
+        <i class="bi bi-arrow-left"></i>
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+      </button>
+      {% for livro in livros.famosos %}
+      <div class="livros">
+        <img class="livros-img" src="{{ livro.img }} ">
+        <div class="sobre">
+          <p class="title">{{ livro.titulo }}</p>
+          <img src="{{ livro.img2 }}" width="70%">
+          <p class="font-">{{ livro.sinopse }}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <button class="botao_nav">
+        <i class="bi bi-arrow-right"></i>
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+</svg>
+      </button>
+    </div>
+    
+  </div>
+  </div>
+
+  
+      <dialog class='modallivros' id='modallivro'>
+        <button id='fecharmodal' class='fecharmodal'>X</button>
+        <div class=informacoes>
+          <div class=area1>
+            <img src="{{url_for('static', filename='livros/1.jpg')}} " class= modal-img>
+            <p>Autor:</p>
+            <p>Gênero:</p>
+            <p>Idioma:</p>
+            <p>Classificação indicativa:</p>
+          </div>
+          <div class="area2">
+            <h1>Titulo do livro</h1>
+            <img src="{{url_for('static', filename='estrelas/5.png')}} ">
+            <p>Sinopse do livro</p>
+            
+            <button id="send1" class="send">
+              <link rel="stylesheet" href="{{url_for('static', filename='stylebutao.css')}}">
+              <link rel="stylesheet" href="{{url_for('static', filename='script.js')}}">
+              <svg viewBox="0 0 90.594 59.714">
+                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768"/>
+              </svg>
+              <span>Pegar livro</span>
+            </button>
+          
+            <button id="send2" class="send">
+              <link rel="stylesheet" href="{{url_for('static', filename='stylebutao.css')}}">
+              <link rel="stylesheet" href="{{url_for('static', filename='script.js')}}">
+              <svg viewBox="0 0 90.594 59.714">
+                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768"/>
+              </svg>
+              <span> Mais tempo </span>
+            </button>
+          
+            <button id="send3" class="send">
+              <link rel="stylesheet" href="{{url_for('static', filename='stylebutao.css')}}">
+              <link rel="stylesheet" href="{{url_for('static', filename='script.js')}}">
+              <svg viewBox="0 0 90.594 59.714">
+                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768"/>
+              </svg>
+              <span>Devolver</span>
+            </button>
+            <script>
+              const btn1 = document.getElementById('send1');
+              const btn2 = document.getElementById('send2');
+              const btn3 = document.getElementById('send3');
+      
+              btn1.addEventListener('click', function send1() {
+                btn1.classList.add('is-loading');
+      
+                // fake API call
+                setTimeout(() => {
+                  btn1.classList.add('is-success');
+                  btn1.classList.remove('is-loading');
+                  btn1.removeEventListener('click', send1);
+                }, 4000);
+              });
+      
+              btn2.addEventListener('click', function send2() {
+                btn2.classList.add('is-loading');
+            
+                // fake API call
+                setTimeout(() => {
+                  btn2.classList.add('is-success');
+                  btn2.classList.remove('is-loading');
+                  btn2.removeEventListener('click', send2);
+                }, 4000);
+              });
+      
+              btn3.addEventListener('click', function send3() {
+                btn3.classList.add('is-loading');
+            
+                // fake API call
+                setTimeout(() => {
+                  btn3.classList.add('is-success');
+                  btn3.classList.remove('is-loading');
+                  btn3.removeEventListener('click', send3);
+                }, 4000);
+              });
+            </script>
+          </div>
+        </div>
+        <div class="area3">
+          <p>Principal Comentario</p>
+        </div>
+        
+      </dialog>
+  <script>
+    const button = document.getElementById('abrirmodal')
+    const modal = document.getElementById('modallivro')
+    const buttonclose = document.getElementById('fecharmodal')
+    
+    button.onclick = function(){
+      modal.showModal()
+    }
+
+    buttonclose.onclick = function(){
+      modal.close()
+    }
+  // Teste
+
+    
+
+
+
+    
+  </script>
+  {% endblock %}
+      <input type='button' class='rodape'>Teste</button>
+</body></html>
+
+
+      
+<!--
+curl $REPLIT_DB_URL -d 'key = value'
+curl $REPLIT_DB_URL -d 'key = value'
+curl "$REPLIT_DB_URL?prefix=key"
+-->

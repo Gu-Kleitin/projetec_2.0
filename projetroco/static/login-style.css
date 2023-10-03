@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:  #404040;
+}
+
+p {
+    margin: 0;
+    padding: 0;   
+}
+.logo {
+  height: 175px;
+}
+
+.logo img {
+  height: 150px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  margin-top: 150px;
+  margin-right: 50px;
+}
+
+.logo-reg {
+  height: 175px;
+}
+
+.logo-reg img {
+  height: 150px;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  margin-top: 40px;
+  margin-right: 50px;
+}
+
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.card {
+    height: 55em;
+    width: 100em;
+    background-color: #202020;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-6{
+    margin-left: -10em;
+    width: 100%;
+}
+
+.login {
+    padding-left:12em;
+    padding-top:6.7em;
+    width: 35em;
+    margin-top: 235px;
+}
+
+.text-section{
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.login-text{
+    text-transform: uppercase;
+    font-family:  'Gill Sans MT';
+    font-size: 40px;
+    font-weight: 900;
+    padding-top: 90px;
+    margin-top: 50px;
+    color: #7C2AE8;
+}
+
+.login-desc{
+  font-family:  'Gill Sans MT';
+  font-size: 18px;
+  color: #202020da;
+  margin-top: 10px;
+}
+
+.reg-text{
+    text-transform: uppercase;
+    font-family:  'Gill Sans MT';
+    font-size: 40px;
+    font-weight: 900;
+    padding-top: 90px;
+    margin-top: -20px;
+    color: #7C2AE8;
+}
+
+.reg-desc{
+  font-family:  'Gill Sans MT';
+  font-size: 18px;
+  color: #202020da;
+  margin-top: 10px;
+}
+
+.section-inputs{
+  display: flex;
+  justify-content: center;
+}
+
+.inputs {
+    flex-direction: column;
+    display: flex;
+    width: 400px;
+    margin-top: 50px;
+}
+
+.imp-user, .imp-pass, .imp-nome, .imp-ra {
+    margin-top: 20px;
+    font-family:  'Gill Sans MT';
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #7C2AE8;
+    color: white;
+}
+
+.imp-user{
+    background-image: url("assets/email.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.4em;
+    padding-left: 1.6em;
+}
+.imp-pass{
+    background-image: url("assets/senha.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.4em;
+    padding-left: 1.6em;
+}
+.imp-ra{
+    background-image: url("assets/person-fill-check.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.4em;
+    padding-left: 1.6em;
+}
+.imp-nome{
+    background-image: url("assets/person-circle.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 1.4em;
+    padding-left: 1.6em;
+}
+
+.imp-user::placeholder, .imp-pass::placeholder, .imp-nome::placeholder, .imp-ra::placeholder{
+    color:white;
+}
+
+.imp-user, .imp-pass:focus {
+    outline: none;
+}
+
+.btn-enter {
+    margin-top: 80px;
+    padding: 15px;
+    width: 90%;
+    background-color: #7C2AE8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Gill Sans MT';
+    cursor: pointer;
+    transition: 1s background-color;
+}
+
+.btn-enter:hover{
+    background-color: #7C2AE8;
+}
+
+.esqueci {
+    text-align: right;
+    margin-top: 10px;
+    text-decoration: none;
+    font-family: 'Gill Sans MT';
+    font-size: 15px;
+    color: #52383f;
+}
+
+.registro{
+    color: #52383f;
+    margin-top: 10px;
+    font-family: 'Gill Sans MT';
+    font-size: 15px;
+}
+

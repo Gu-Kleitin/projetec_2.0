@@ -1,0 +1,43 @@
+<header class="cabecalho">
+    <div class="logo">
+      <a href="{{ url_for('index')}}">
+        <img class='logo' src="{{ url_for('static', filename='assets/logo.png') }}"/>
+      </a>
+    </div>
+    <div class="botoes">
+      <button class="button-nf">
+        <img src="{{ url_for('static', filename='assets/notificacao.png') }}">
+      </button>
+    </div>
+  <!-- menu hamburguer, n sei como arrumar ele direito -->
+    <div class="menu-bg" type="button">
+      {% include 'hamburguer.html' %}  
+    </div>
+
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="{{ url_for('login') }}">Login</a>
+        </li>
+        <li>
+          <a href="{{ url_for('usuario') }}">Perfil</a>
+        </li>
+        <li>
+          <a href="{{ url_for('cadastro') }}">Cadastrar 📖</a>
+        </li>
+        <li>
+          <a href="{{ url_for('sobre') }}">Sobre</a>
+        </li>
+      </ul>
+    </nav>
+    <form class="example" action="action_page.php" style='padding-left:250px;padding-top:40px'>
+      <input type="text" placeholder="Procurar" name="search" class='searchbutton'>
+      <button type="submit"><i class="fa fa-search"></i></button>
+      
+    </form>
+    <div class="rodape">
+    <p> &nbsp by Group Six &nbsp</p>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}

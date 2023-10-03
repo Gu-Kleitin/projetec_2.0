@@ -1,0 +1,72 @@
+<html>
+<head>
+  <html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+    <title>Cadastro de livros</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img class="Logo" src="{{url_for('static', filename='assets/logo.png')}}" alt="Logo">
+        </div>
+        <div class="form">
+            <form method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>CADASTRO DE LIVRO</h1>
+                    </div>
+                    <div class="login-button">
+                        <button>
+                          <a href="{{ url_for('index') }}">Início</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome_livro">NOME DO LIVRO</label>
+                        <input id="nome_livro" type="text" name="nome_livro" placeholder="Digite o nome do livro">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="genero_livro">GÊNERO LITERÁRIO</label>
+                        <input id="genero_livro" type="text" name="genero_livro" placeholder="Digite o gênero do livro">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="autor_livro">AUTOR</label>
+                        <input id="autor_livro" type="text" name="autor_livro" placeholder="Digite o autor do livro">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="resumo_livro">SINOPSE</label>
+                        <textarea id="resumo_livro" name="resumo_livro" rows="4" cols="50" placeholder="Digite a sinopse do livro"></textarea>
+                    </div>
+                </div>
+                    
+                <div class="cadastro-button">
+                    <button onclick='cadastroLivros()'>
+                      <a href="{{ url_for('index') }}">Cadastrar</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  function cadastroLivros(){
+    swal({
+      title: "Biblioteca atualizada",
+      text: "Cadastro feito com sucesso",
+      icon: "success",
+    });
+  }
+</script>
+
+</html>

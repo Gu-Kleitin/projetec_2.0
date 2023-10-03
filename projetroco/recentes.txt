@@ -1,0 +1,12 @@
+As Cronicas de Fogo e Gelo
+Sinopse: Nas florestas ao norte de Winterfell, forças sobrenaturais se espalham por trás da Muralha que protege a região. E, nas Cidades Livres, o jovem Rei Dragão exilado na Rebelião de Robert planeja sua vingança e deseja recuperar sua herança de família: o Trono de Ferro de Westeros.
+/static/livros/fogo-gelo.jpg
+/static/estrelas/4.png
+Laranja Mecânica
+Sinopse: Situado na sociedade inglesa de um futuro distópico, que tem uma cultura de extrema violência juvenil, onde um anti-herói adolescente dá uma narração em primeira pessoa sobre suas façanhas violentas e suas experiências com autoridades estaduais que possuem a intenção de reformá-lo.
+/static/livros/laranja.jpg
+/static/estrelas/4.png
+1984
+Sinopse:Após uma guerra global, semelhante à segunda grande guerra, porém com mais bombas atômicas, o mundo foi dividido em três continentes: Lestásia, Eurásia e Oceania, onde fica a cidade de Londres. Esse último é comandado pelo líder Big Brother, a figura máxima de poder e controle, “o olho que tudo vê”
+/static/livros/1984.jpg
+/static/estrelas/3.png

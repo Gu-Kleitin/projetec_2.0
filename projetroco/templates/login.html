@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login-style.css') }}">
+  <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="col-md-6">
+        <div class="imagem">
+          <img class="login" src="{{url_for('static', filename='assets/Login.png')}}" alt="Login">
+        </div>
+
+      </div>
+      <div class="col-md-6 text-section">
+        <div class="logo">
+          <a href="{{ url_for('index') }}">
+           <img src="{{url_for('static', filename='assets/logo invertida.png')}}" alt="Logo" />
+          </a>
+        </div>
+        <p class="login-text">Login</p>
+        <p class="login-desc">Obrigado por entrar em nosso site!<br>Faça login para acompanhar seus pedidos.</p>
+        <div class="section-inputs">
+          <div class="inputs">
+            
+            <input class="imp-user" type="text" placeholder="Email">
+            <input class="imp-pass" type="password" placeholder="Senha">
+          
+          
+          
+            <a class="esqueci" href="/recuperarsenha">Esqueci minha senha</a>
+            <div class="botao"
+             <form id="form">
+              <input class="btn-enter" type="submit" value="Entrar">
+              </form>
+            </div>
+            <p class="registro">Ainda não é membro? Se registre clicando <a href="{{ url_for('register') }}">aqui.</a></p>
+            <a href="https://projetec-flask.ilipe.repl.co/usuario"</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

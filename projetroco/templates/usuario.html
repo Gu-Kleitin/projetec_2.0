@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
+</head>
+<body>
+  <div id="janela" style="display: none; position: absolute;">
+    <iframe id="iframejanela" name="iframejanela" frameborder="3" style="height: 100px;"></iframe>
+  </div>
+  {% extends 'header.html' %}
+  {% block content %}
+  <div class=pg-user>
+    <div class='info-user'>
+      <img class='foto-user' src="{{ url_for('static', filename='/assets/person.svg') }}">
+      <h1 class='infos-user'>
+          Usuário<br>
+          Nome completo<br>
+          Exemplo@email.com<br>
+          Registro Acadêmico: 0000000
+      </h1>
+      <h1 class='infos-user'>
+      </h1>
+      <div class='divisao'></div>
+    </div>
+    <div class='livrousuario'>
+      <h1 class='tituloclasses'>Livros do usuário</h1>
+      <img src="{{ url_for('static', filename='/livros/1.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/2.jpg') }}"class='livros-img'><br>
+      <img src="{{ url_for('static', filename='/livros/senhor-dos-aneis.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/porquinho.jpg') }}" class='livros-img'>
+    </div>
+  
+
+    
+    
+    <div class='livrodesejo'>
+      <h1 class='tituloclasses'>Livros desejados</h1>
+      <img src="{{ url_for('static', filename='/livros/1.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/2.jpg') }}"class='livros-img'><br>
+      <img src="{{ url_for('static', filename='/livros/senhor-dos-aneis.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/porquinho.jpg') }}" class='livros-img'>
+    </div>
+    
+    <div class='livrorecente'>
+      <h1 class='tituloclasses'>Lidos recentemente</h1>
+      <img src="{{ url_for('static', filename='/livros/1.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/2.jpg') }}"class='livros-img'><br>
+      <img src="{{ url_for('static', filename='/livros/senhor-dos-aneis.jpg') }}" class='livros-img'>
+      <img src="{{ url_for('static', filename='/livros/porquinho.jpg') }}" class='livros-img'>
+    </div>
+  </div>
+  {% endblock %}
+  <button></button>
+</body>
+</html>

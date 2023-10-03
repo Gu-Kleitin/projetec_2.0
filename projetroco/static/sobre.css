@@ -1,0 +1,22 @@
+.pg-sobre{
+  display:flex;
+  justify-content:start;
+  position: relative;
+  top: 117px;
+  color:white
+}
+.txt{
+  padding-right: 20px;
+  border-right: solid 3px grey;
+  margin-left: 200px;
+  width: 1000px;
+  font-size: 25px;
+}
+.redes1{
+  display:flex;
+  justify-content:space-around;
+  width: 550px
+}
+.redes2{
+  align-self:center;
+}

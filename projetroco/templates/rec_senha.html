@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperação de senha</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login-style.css') }}">
+  <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
+  <script src="static/Database.js"></script>
+  <link >
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="col-md-6">
+        <div class="imagem">
+          <img class="login" src="{{url_for('static', filename='assets/Login.png')}}" alt="Login">
+        </div>
+
+      </div>
+      <div class="col-md-6 text-section">
+        <div class="logo-reg">
+          <a href="{{ url_for('index') }}">
+           <img src="{{url_for('static', filename='assets/logo invertida.png')}}" alt="Logo" />
+          </a>
+        </div>
+        <p class="reg-text">RECUPERAÇÃO</p>
+        <p class="reg-desc">Recuperação de senha.</p>
+        <div class="section-inputs">
+          <div class="inputs">
+          <form action="processar_formulario.php" method="POST">
+            
+            
+            <input class='imp-ra' type='text'placeholder='Digite o seu RA'id="ra">
+            <input class="imp-user" type="text" placeholder=" Digite o seu Email" id="em">
+            
+            <div class="botao"
+             <form id="form">
+              <input class="btn-enter" type="submit" value="Enviar email" id="inpu">
+              </form>
+            </div>
+            <p class="registro">Já é membro? Efetue login clicando <a href="login">aqui.</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

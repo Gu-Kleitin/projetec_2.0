@@ -1,0 +1,12 @@
+Harry Potter e a Pedra Filosofal
+Sinopse: Inicialmente, os garotos acreditavam que a Pedra Filosofal, que se encontrava protegida em Hogwarts, fosse alvo de Severo Snape, professor da escola, para que este se tornasse rico. Mas os garotos descobrem que Voldemort, enfraquecido, está à procura da Pedra para se tornar um grande bruxo novamente.
+/static/livros/Harry-Potter.jpg
+/static/estrelas/5.png
+O Hobbit
+Sinopse:O Hobbit conta a história de Bilbo Bolseiro, um Hobbit pacato e satisfeito cuja vida vira de cabeça para baixo quando ele se junta ao mago Gandalf e a treze anões em sua jornada para reaver um tesouro roubado.
+/static/livros/hobbit.jpg
+/static/estrelas/4.png
+Os Três Porquinhos
+Sinopse: Dois porquinhos não ajudavam em nada na casa, enquanto o terceiro porquinho sentia pena da quantidade de trabalho que a mamãe tinha e estava sempre disposto a ajudá-la. Num belo dia, a mamãe, acreditando da maturidade dos filhos, pediu que saíssem de casa para seguir suas próprias vidas.
+/static/livros/porquinho.jpg
+/static/estrelas/5.png

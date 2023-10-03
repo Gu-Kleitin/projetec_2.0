@@ -1,0 +1,12 @@
+O Pequeno Principe
+Sinopse: Envolvida em intrigas e traições do palácio, Jude descobre sua própria capacidade para truques e derramamento de sangue. Mas, com a ameaça de uma guerra civil e o Reino das Fadas por um fio, Jude precisará arriscar sua vida em uma perigosa aliança para salvar suas irmãs, e o próprio Reino.
+static/livros/1.jpg
+static/estrelas/5.png
+O Senhor das Pedras
+Sinopse: Um misterioso assassinato dentro de uma biblioteca surpreende a todos, afinal de contas, uma pessoa perdeu a vida por conta de um livro. Qual a razão deste crime?
+/static/livros/2.jpg
+/static/estrelas/4.png
+Senhor dos Anéis
+Sinopse: Numa cidadezinha indolente do Condado, um jovem hobbit é encarregado de uma imensa tarefa. Deve empreender uma perigosa viagem através da Terra-média até as Fendas da Perdição, e lá destruir o Anel do Poder - a única coisa que impede o domínio maléfico do Senhor do Escuro.
+/static/livros/senhor-dos-aneis.jpg
+/static/estrelas/3.png

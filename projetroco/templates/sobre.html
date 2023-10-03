@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css') }}">
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='sobre.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
+</head>
+<body>
+  <div id="janela" style="display: none; position: absolute;">
+    <iframe id="iframejanela" name="iframejanela" frameborder="3" style="height: 200px;"></iframe>
+  </div>
+  
+  {% extends 'header.html' %}
+  {% block content %}
+  <div class="pg-sobre">
+    
+    <div class="txt">
+      <h1>Sobre</h1>
+      <p>Nós, estudantes do curso técnico de informática do Instituto Federal de Minas Gerais-Campus Sabará, turma 2021, realizamos este projeto como parte de nossa formação acadêmica. Ele faz parte da disciplina Projetec, na qual nos dedicamos a desenvolver uma aplicação funcional que solucione um problema real na sociedade.<br><br>
+
+Nossa escolha foi aprimorar a comunidade literária do Campus por meio do nosso projeto chamado Biblioteca Solidária. Trata-se de uma plataforma que permite a troca de livros entre os alunos de forma segura e confiável, incentivando a leitura entre os estudantes e fortalecendo os laços sociais dentro do campus.<br><br>
+
+Com essa iniciativa, visamos criar um ambiente mais inclusivo e acessível, onde todos os alunos tenham a oportunidade de desfrutar de uma ampla variedade de obras literárias, enriquecendo assim seu conhecimento e ampliando seus horizontes. Acreditamos que a leitura é uma ferramenta poderosa para o desenvolvimento pessoal e intelectual, e por isso estamos empenhados em tornar a biblioteca do campus um espaço vivo e dinâmico, impulsionado pela colaboração e troca de conhecimento entre os estudantes.<br></p>
+    </div>
+    <div class="redes1">
+      <div class="redes2">
+        <div class="container">
+            <div class="user-image">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}"
+                alt="this image contains user-image">
+            </div>
+     
+            <div class="content">
+                <h3 class="name">Biblioteca Solidária</h3>
+                <p class="username">@bibliosolid</p>
+     
+     
+                <div class="links">
+                    <a class="facebook" href=
+    "https://www.facebook.com/profile.php?id=100095178425738&mibextid=2JQ9oc"
+                        target="_blank" title="GFG_facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+     
+                    <a class="git" href=
+    "https://github.com/ilipehwd/projetecbiblioteca.git"
+                        title="GFG_github" target="_blank">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+     
+                    <a class="linkedin" href=
+    "https://www.linkedin.com/in/biblioteca-solid%C3%A1ria-62572a284?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bd75jBKx0SIefmyJwhARQ4w%3D%3D"
+                        title="GFG_linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                     
+                    <a class="insta" href=
+    "https://www.instagram.com/invites/contact/?i=hhryq64d3w7y&utm_content=s46tk0o"
+                        target="_blank" title="GFG_instagram">
+                        <i class="fab fa-instagram-square"></i>
+                    </a>
+                </div>
+     
+                <p class="details">
+                    Um portal de troca de livros 
+                </p>
+     
+     
+                <a class="effect effect-4" href="mailto:bibliotecasolidaria22@gmail.com">
+                    Message
+                </a>
+            </div>
+        </div>
+        <div id="button">
+          
+          
+        </div>
+         
+        <!-- This is link of adding small images
+             which are used in the link section  -->
+        <script src="https://kit.fontawesome.com/704ff50790.js"
+            crossorigin="anonymous">
+        </script>
+     <style>
+    
+    /* Assigning all the same properties to the body */
+    .container{
+        width: 20em;
+        background-color: rgb(255, 255, 255);
+        overflow: hidden;
+        border-radius: 1em;
+        text-align: center;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 1em;
+    }
+     
+    .user-image{
+        padding: 3em 0;
+        background-image: linear-gradient(70deg,#A020F0, #000);
+    }
+     
+    .user-image img{
+        width: 7em;
+        height: 7em;
+        border-radius: 50%;
+        box-shadow:  0 0.6em 1.8em ;
+        object-fit: cover;
+    }
+     
+    .content{
+        color: #565656;
+        padding: 2.2em;
+    }
+     
+    .name{
+        font-size: 1.5em;
+        text-transform: uppercase;
+    }
+     
+    .username{
+        font-size: 1em;
+        color: #9e9e9e;
+    }
+     
+    .links{
+        display: flex;
+        justify-content: center;
+        margin: 1.5em 0;
+    }
+
+    .links a {
+      color: grey;
+      padding: 10px;
+    }
+    
+    .insta:hover{
+        color:rgb(255, 70, 101);
+        transform: scale(2,2);
+    }
+     
+    .git:hover{
+        color:rgb(0, 0, 0);
+        transform: scale(2,2);
+    }
+     
+    .linkedin:hover{
+        color:rgba(4, 0, 253, 0.842);
+        transform: scale(2,2);
+    }
+     
+    .facebook:hover{
+        color:rgb(4, 0, 255);
+        transform: scale(2,2);
+    }
+     
+    .details{
+        margin-bottom: 1.8em;
+    }
+
+    .links{
+      display: flex;
+      align: center;
+    }
+     
+     
+    /* CSS for messagin link */
+     
+    .effect {
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: rgb(48, 41, 41);
+        text-transform: capitalize;
+        width: 100%;
+        background-image: linear-gradient(60deg,#A020F0,#A020F0);
+        font-size: 1.2em;
+        padding: 1em 3em;
+        border-radius: 5em;
+        overflow: hidden;
+    }
+       
+    .effect.effect-4:before {
+        content: "\f2b6";
+        font-family: FontAwesome;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 1.8em;
+        transform: scale(0, 1);
+    }
+    .effect.effect-4:hover {
+        text-indent: -9999px;
+    }
+         
+    .effect.effect-4:hover:before {
+    transform: scale(1, 1);
+    text-indent: 0;
+    }
+    .button{
+      background-color:rgb(255, 255, 255);
+      margin: 300px;
+    }
+     </style>
+  
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</body>
+
+</html>
