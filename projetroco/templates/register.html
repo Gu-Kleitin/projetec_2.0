@@ -8,7 +8,7 @@
   <title>Register Page</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='login-style.css') }}">
   <link rel="shortcut icon" href="/static/assets/logo invertida.png" type="image/x-icon">
-  <script src="static/Database.js"></script>
+  <script src=></script>
   <link >
 </head>
 
@@ -31,7 +31,7 @@
         <p class="reg-desc">Obrigado por entrar em nosso site!<br>Faça registro para começar a realizar seus pedidos.</p>
         <div class="section-inputs">
           <div class="inputs">
-          <form action="{{ url_for('cadastrar') }}" method="POST">
+          <form method="POST" action="/adicionar_dados" >
             
             <input class='imp-nome' type='text' placeholder='Nome' id="nome" name="nome" required>
             
@@ -55,7 +55,7 @@
       </div>
     </div>
   </div>
-  <a href="{{ url_for('link') }}">Lista</a>
+  
 </body>
 
 </html>
