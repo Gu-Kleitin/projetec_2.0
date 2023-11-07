@@ -29,20 +29,24 @@
         <p class="login-desc">Obrigado por entrar em nosso site!<br>Faça login para acompanhar seus pedidos.</p>
         <div class="section-inputs">
           <div class="inputs">
-            
-            <input class="imp-user" type="text" placeholder="Email">
-            <input class="imp-pass" type="password" placeholder="Senha">
+
+            <form action='/log' method='POST'>
+            <input class="imp-user" type="text" placeholder="Email" id="email" name="email">
+            <input class="imp-pass" type="password" placeholder="senha" id="senha" name="senha">
+            <input class="btn-enter" type="submit" value="Entrar">
+            </form>
           
           
           
             <a class="esqueci" href="/recuperarsenha">Esqueci minha senha</a>
-            <div class="botao"
-             <form id="form">
-              <input class="btn-enter" type="submit" value="Entrar">
-              </form>
+            <div class="botao">
+            
+              
+            
+             
             </div>
             <p class="registro">Ainda não é membro? Se registre clicando <a href="{{ url_for('register') }}">aqui.</a></p>
-            <a href="https://projetec-flask.ilipe.repl.co/usuario"</a> 
+            
           </div>
         </div>
       </div>

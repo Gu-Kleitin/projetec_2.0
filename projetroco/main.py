@@ -1,7 +1,6 @@
-from flask import Flask, render_template, render_template, request, redirect, url_for
+from flask import Flask, render_template, render_template, request, redirect, url_for,session
 from flask_mysqldb import MySQL
-
-
+import _mysql_connector
 app = Flask(__name__)
 
 # Rotas
@@ -132,37 +131,109 @@ livros = {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #sistema de coleta de registro
+app.secret_key = 'projetec'
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'Users'
+
+
+app.config['MYSQL_DB'] = 'biblioteca'
 
 mysql = MySQL(app)
 
-@app.route('/')
-def link():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM clientes')
-    data = cur.fetchall()
-    cur.close()
-    return render_template('lista.html', clientes=data)
-
-@app.route('/register', methods=['GET', 'POST'])
-def cadastrar():
+@app.route('/adicionar_dados', methods=['POST'])
+def adicionar_dados():
     if request.method == 'POST':
         nome = request.form['nome']
         ra = request.form['ra']
         email = request.form['email']
         senha = request.form['senha']
-      
-      
-      
+
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO clientes (nome,ra,email,senha) VALUES (%s, %s)', (nome, ra,email,senha))
+        cur.execute("INSERT INTO usuario (nome, ra,email,senha) VALUES (%s, %s,%s,%s)", (nome,ra,email,senha))
         mysql.connection.commit()
         cur.close()
-        return redirect(url_for('lista'))
-    return render_template('register.html')
+
+        return render_template("login.html")
+#LOGIN E SESSÃO
+#------------------------------------------------------------------------------------#
+livros = {
+  'emalta': livrosemalta,
+  'recentes': livrosrecentes,
+  'famosos': livrosfamosos}
+app.secret_key = 'projetec'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_DB'] = 'biblioteca'
+
+    # Lógica para carregar livros famosos
+
+
+@app.route('/log', methods=['POST'])
+
+def log():
+  try:
+      email = request.form["email"]
+      senha = request.form["senha"]
+
+      conn = mysql.connection.cursor()
+      cursor = conn
+      cursor.execute('SELECT senha FROM usuario WHERE email = %s', (email,))
+      data = cursor.fetchone()
+  
+      if data and senha == data[0]:
+        # Autenticação bem-sucedida
+          session['email'] = email
+          conn.close()
+          return render_template('index.html', livros=livros)
+       
+      else:
+        # Autenticação falhou
+          conn.close()
+          return 'Nome de usuário ou senha incorretos'
+
+  except Exception as e:
+    print("Ocorreu um erro: " + str(e))
+  #-------------------------------------------------------
+
+        
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect('/')
+#---------------------------------------------------------------
+#Banco dos livros
+
+
+app.secret_key = 'projetec'
+app.config['MYSQL_HOST'] = 'localhost'
+
+
+app.config['MYSQL_DB'] = 'biblioteca'
+
+mysql = MySQL(app)
+
+@app.route('/adicionar_Livros', methods=['POST'])
+
+def adicionar_livros():
+  try:
+      
+    if request.method == 'POST':
+        titulo = request.form['nome_livro']
+        genero = request.form['genero_livro']
+        autor = request.form['autor_livro']
+        sinopse = request.form['resumo_livro']
+
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO livro(titulo,genero,autor,sinopse) VALUES (%s, %s,%s,%s)", (titulo,genero,autor,sinopse))
+        mysql.connection.commit()
+        cur.close()
+        livros = {
+  'emalta': livrosemalta,
+  'recentes': livrosrecentes,
+  'famosos': livrosfamosos}
+       
+        return render_template("index.html",livros=livros)
+
+  except Exception as e:
+      return "Ocorreu um erro: " + str(e)
 
 
 
@@ -170,9 +241,6 @@ def cadastrar():
 
 
 
+if __name__ == "__main__":  
 
-
-
-if __name__ == "__main__":
-
-  app.run()
+  app.run( )
